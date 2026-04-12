@@ -1,0 +1,40 @@
+https://calendar.app.google/ia6ueEhgPMXPPzSm6
+
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3SCByedv_ZpLJOqn87fuocLEop8JbsiRH6ozJOw6pETjKvQd8yzY-yIVIcKY64JLnCfcqwOevP?gv=true',
+      color: '#039BE5',
+      label: 'Reservar una cita',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+
+inmigrationsrhai@gmail.com
+
+
+
+npx ts-node src/server.ts
+
+
+uvicorn main:app --reload
+
+
+npm run dev
+
+npx ts-node test-db-connection.ts
+
+186.6.77.139
+
+
+
+https://business.facebook.com/latest/settings/apps?business_id=3163133404056641

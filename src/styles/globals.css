@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 248 250 252;
+    --card: 255 255 255;
+    --text: 15 23 42;
+    --muted: 100 116 139;
+    --line: 226 232 240;
+    --primary: 37 99 235;
+    --primary-dark: 30 64 175;
+    --success: 22 163 74;
+    --warning: 234 179 8;
+    --danger: 239 68 68;
+    --radius: 24px;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background: rgb(var(--bg));
+    color: rgb(var(--text));
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen;
+    background:
+      radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 28%),
+      radial-gradient(circle at top right, rgba(16,185,129,0.08), transparent 24%),
+      rgb(var(--bg));
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 md:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium;
+    border-color: rgb(var(--line));
+    color: rgb(var(--muted));
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-title {
+    @apply text-4xl font-black leading-tight md:text-6xl;
+  }
+
+  .hero-copy {
+    @apply mt-4 max-w-2xl text-base leading-7 text-slate-600 md:text-lg;
+  }
+
+  .card-ui {
+    @apply rounded-[24px] border bg-white p-6 md:p-8;
+    border-color: rgb(var(--line));
+    box-shadow: var(--shadow);
+  }
+
+  .soft-panel {
+    @apply rounded-[28px] border bg-white/80 backdrop-blur;
+    border-color: rgba(226,232,240,0.9);
+    box-shadow: var(--shadow);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white transition md:text-base;
+    background: rgb(var(--primary));
+  }
+
+  .btn-primary:hover {
+    background: rgb(var(--primary-dark));
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-semibold transition md:text-base;
+    border-color: rgb(var(--line));
+    background: white;
+    color: rgb(var(--text));
+  }
+
+  .btn-secondary:hover {
+    @apply bg-slate-50;
+  }
+
+  .input-ui {
+    @apply w-full rounded-2xl border bg-white px-4 py-3 outline-none transition;
+    border-color: rgb(var(--line));
+  }
+
+  .input-ui:focus {
+    border-color: rgb(var(--primary));
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+  }
+
+  .score-strong {
+    @apply text-green-600;
+  }
+
+  .score-medium {
+    @apply text-amber-500;
+  }
+
+  .score-weak {
+    @apply text-rose-600;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up .45s cubic-bezier(.22,.61,.36,1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none !important;
+  }
+}
