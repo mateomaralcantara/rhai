@@ -9,7 +9,15 @@ dist/
 .env
 .env.*
 !.env.example
+datos.txt
 
 npm-debug.log*
 yarn-error.log*
 pnpm-lock.yaml
+
+__pycache__/
+*.pyc
+*.pyo
+*.sqlite
+*.db
+*.bundle
